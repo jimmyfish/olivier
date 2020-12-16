@@ -11,7 +11,9 @@ const mix = require('laravel-mix');
  |
  */
 
-mix.js('resources/js/app.js', 'public/js')
-    .postCss('resources/css/app.css', 'public/css', [
-        //
-    ]);
+mix
+    .copy('resources/assets/js/bundle.js', 'public/assets/js')
+    .copy('resources/assets/js/charts/chart-crypto.js', 'public/assets/js')
+    .js('resources/assets/js/scripts.js', 'public/assets/js')
+    .postCss('resources/assets/css/dashlite.css', 'public/assets/css')
+    .postCss('resources/assets/css/theme.css', 'public/assets/css');

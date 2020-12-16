@@ -1,0 +1,19 @@
+
+   Predis\Connection\ConnectionException 
+
+  Error while reading line from the server. [tcp://127.0.0.1:6379]
+
+  at vendor/predis/predis/src/Connection/AbstractConnection.php:155
+    151▕      */
+    152▕     protected function onConnectionError($message, $code = null)
+    153▕     {
+    154▕         CommunicationException::handle(
+  ➜ 155▕             new ConnectionException($this, static::createExceptionMessage($message), $code)
+    156▕         );
+    157▕     }
+    158▕ 
+    159▕     /**
+
+      [2m+29 vendor frames [22m
+  30  artisan:37
+      Illuminate\Foundation\Console\Kernel::handle(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
